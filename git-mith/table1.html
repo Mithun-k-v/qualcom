@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let dob = document.getElementById("dob").value;
+            let phone = document.getElementById("phn_no").value;
+            let email = document.getElementById("email").value;
+            let address = document.getElementById("ads").value;
+            let nationality = document.getElementById("nationality").value;
+            let reason = document.getElementById("rfj").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let prefer = document.querySelector('input[name="prefer"]:checked');
+            let receive = document.querySelector('input[name="receive"]:checked');
+
+            // Check if required fields are empty
+            if (!fname || !lname || !dob || !phone || !email || !address || !nationality || !reason || !gender || !prefer || !receive) {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<h1><center>REGISTRATION FORM</center></h1>
+
+<form action="/action_page.php" method="POST" onsubmit="return validateForm()">
+    <h2>NAME</h2>
+    <label for="fname"><b>1. First Name:</b></label>
+    <input type="text" id="fname" name="fname" placeholder="Enter first name" required><br><br>
+
+    <label for="lname"><b>2. Last Name:</b></label>
+    <input type="text" id="lname" name="lname" placeholder="Enter last name" required><br><br>
+
+    <p><b>3. Select the age range:</b></p>
+    <select name="age" required>
+        <option value="">Select Age Range</option>
+        <option value="8-18">8-18</option>
+        <option value="19-29">19-29</option>
+        <option value="30-50">30-50</option>
+        <option value="51-70">51-70</option>
+    </select><br><br>
+
+    <label for="dob"><b>4. Date of Birth:</b></label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <label for="phn_no"><b>5. Phone number:</b></label>
+    <input type="tel" id="phn_no" name="phone" placeholder="Enter phone number" required><br><br>
+
+    <p><b>6. Select the gender:</b></p>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label><br><br>
+
+    <label for="email"><b>7. Email:</b></label>
+    <input type="email" id="email" name="email" placeholder="Enter your email ID" required><br><br>
+
+    <label for="ads"><b>8. Address:</b></label><br>
+    <input type="text" id="ads" name="address" placeholder="Enter your address" required><br><br>
+
+    <label for="nationality"><b>9. Nationality:</b></label>
+    <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" required><br><br>
+
+    <label for="rfj"><b>10. Reason for Joining:</b></label>
+    <input type="text" id="rfj" name="reason_for_joining" placeholder="Type here....." required style="width:200px; height:100px;"><br><br>
+
+    <b><label for="prefer">11. Which do you prefer for online or virtual meetings?</label><br></b>
+    <input type="radio" id="google_meet" name="prefer" value="Google Meet" required>
+    <label for="google_meet">Google Meet</label><br>
+    <input type="radio" id="zoom" name="prefer" value="Zoom" required>
+    <label for="zoom">Zoom</label><br>
+    <input type="radio" id="skype" name="prefer" value="Skype" required>
+    <label for="skype">Skype</label><br>
+    <input type="radio" id="facebook_messenger" name="prefer" value="Facebook Messenger" required>
+    <label for="facebook_messenger">Facebook Messenger</label><br>
+    <input type="radio" id="other" name="prefer" value="Other" required>
+    <label for="other">Other</label><br><br>
+
+    <p><b>12. Fun Ways To Participate (select all that apply):</b></p>
+    <input type="checkbox" id="camping" name="FWTP[]" value="Camping">
+    <label for="camping">Camping</label><br>
+    <input type="checkbox" id="events" name="FWTP[]" value="Events">
+    <label for="events">Events</label><br>
+    <input type="checkbox" id="travels" name="FWTP[]" value="Travels">
+    <label for="travels">Travels</label><br>
+    <input type="checkbox" id="others" name="FWTP[]" value="Others">
+    <label for="others">Others</label><br><br>
+
+    <p><b>13. Would You Like to Receive An Email?</b></p>
+    <input type="radio" id="receive_yes" name="receive" value="Yes" required>
+    <label for="receive_yes">Yes</label><br>
+    <input type="radio" id="receive_no" name="receive" value="No" required>
+    <label for="receive_no">No</label><br><br>
+
+    <center><button type="submit">Submit</button></center>
+    <h4><center>Thank you for joining the club!</center></h4>
+</form>
+
+</body>
+</html>
